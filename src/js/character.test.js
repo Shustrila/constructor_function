@@ -16,10 +16,12 @@ describe('TEST: Character', () => {
 
   // ERRORS
   test('not the right type of character', () => {
-    expect(new Character('Мазай', 'Дед мазай')).toThrow(Error);
+    const character = () => new Character('Мазай', 'Дед мазай');
+    expect(character).toThrow();
   });
 
   test('name type nuber', () => {
-    expect(new Character(3234, 'Bowman')).toThrow(Error);
+    const character = () => new Character(3234, 'Bowman');
+    expect(character).toThrow(Error);
   });
 });

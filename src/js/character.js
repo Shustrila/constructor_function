@@ -11,7 +11,7 @@ function Character(name, type) {
   });
 
   if (Object.keys(this).length === 0) {
-    throw Error('ERROR');
+    throw new Error('object empty');
   }
 }
 
