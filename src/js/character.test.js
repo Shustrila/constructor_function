@@ -17,11 +17,16 @@ describe('TEST: Character', () => {
   // ERRORS
   test('not the right type of character', () => {
     const character = () => new Character('Мазай', 'Дед мазай');
-    expect(character).toThrow();
+    expect(character).toThrow('is not equal to the types of characters');
+  });
+
+  test('smal name', () => {
+    const character = () => new Character('Д', 'Дед мазай');
+    expect(character).toThrow('the length of the name');
   });
 
   test('name type nuber', () => {
     const character = () => new Character(3234, 'Bowman');
-    expect(character).toThrow(Error);
+    expect(character).toThrow('name field not type string');
   });
 });

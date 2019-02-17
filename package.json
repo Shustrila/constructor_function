@@ -4,7 +4,7 @@
   "description": "constructor function",
   "main": "webpack.config.js",
   "scripts": {
-    "test": "jest --coverage test.js"
+    "test": "jest --coverage test.js --watch"
   },
   "repository": {
     "type": "git",

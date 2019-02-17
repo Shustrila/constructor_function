@@ -1,6 +1,9 @@
 function Character(name, type) {
+  if (typeof name !== 'string') throw new TypeError('name field not type string');
+  if (name.length < 2 || name.length > 10) throw new TypeError('the length of the name');
+
   this.types.forEach((item) => {
-    if (type === item.type && typeof name === 'string' && name.length > 2 && name.length < 10) {
+    if (type === item.type) {
       this.name = name;
       this.type = type;
       this.attack = item.attack;
@@ -11,7 +14,7 @@ function Character(name, type) {
   });
 
   if (Object.keys(this).length === 0) {
-    throw new Error('object empty');
+    throw new TypeError('is not equal to the types of characters');
   }
 }
 
